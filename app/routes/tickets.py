@@ -15,7 +15,6 @@ queues: Dict[int, List[int]] = {
     4: []
 }
 
-# Функция для очистки одной очереди
 async def clear_queue(num_queue: int):
     while True:
         if queues[num_queue]:

@@ -19,12 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-    async function printOneEvery10Seconds1() {
+
+    async function updatequeue(cabinetid) {
         while (true) {
-            if (queues[1].length > 0){
-                const ticket = queues[1].pop(); // Извлекаем последний элемент
+            if (queues[cabinetid].length > 0){
+                const ticket = queues[cabinetid].pop(); // Извлекаем последний элемент
                 const ticketNumber = ticket.ticket_number;
-                cabinetik1.innerHTML = ticketNumber;
+                if (cabinetid === 1){
+                    cabinetik1.innerHTML = ticketNumber;
+                }
+                if (cabinetid === 2){
+                    cabinetik2.innerHTML = ticketNumber;
+                }
+                if (cabinetid === 3){
+                    cabinetik3.innerHTML = ticketNumber;
+                }
+                if (cabinetid === 4){
+                    cabinetik4.innerHTML = ticketNumber;
+                }
                 await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
             }
             else{
@@ -33,58 +45,78 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    printOneEvery10Seconds1();
+    updatequeue(1);
+    updatequeue(2);
+    updatequeue(3);
+    updatequeue(4);
 
 
-    async function printOneEvery10Seconds2() {
-        while (true) {
-            if (queues[2].length > 0){
-                const ticket = queues[2].pop(); // Извлекаем последний элемент
-                const ticketNumber2 = ticket.ticket_number;
-                cabinetik2.innerHTML = ticketNumber2;
-                await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
-            }
-            else{
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
+    //async function printOneEvery10Seconds1() {
+    //    while (true) {
+    //        if (queues[1].length > 0){
+    //            const ticket = queues[1].pop(); // Извлекаем последний элемент
+    //            const ticketNumber = ticket.ticket_number;
+    //            cabinetik1.innerHTML = ticketNumber;
+    //            await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
+    //        }
+    //        else{
+    //            await new Promise(resolve => setTimeout(resolve, 1000));
+    //        }
+    //    }
+    //}
 
-    printOneEvery10Seconds2();
-
-
-    async function printOneEvery10Seconds3() {
-        while (true) {
-            if (queues[3].length > 0){
-                const ticket = queues[3].pop(); // Извлекаем последний элемент
-                const ticketNumber3 = ticket.ticket_number;
-                cabinetik3.innerHTML = ticketNumber3;
-                await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
-            }
-            else{
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-
-    printOneEvery10Seconds3();
+    //printOneEvery10Seconds1();
 
 
-    async function printOneEvery10Seconds4() {
-        while (true) {
-            if (queues[4].length > 0){
-                const ticket = queues[4].pop(); // Извлекаем последний элемент
-                const ticketNumber4 = ticket.ticket_number;
-                cabinetik4.innerHTML = ticketNumber4;
-                await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
-            }
-            else{
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
+    //async function printOneEvery10Seconds2() {
+    //    while (true) {
+    //        if (queues[2].length > 0){
+    //            const ticket = queues[2].pop(); // Извлекаем последний элемент
+    //            const ticketNumber2 = ticket.ticket_number;
+    //            cabinetik2.innerHTML = ticketNumber2;
+    //           await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
+    //        }
+    //        else{
+    //            await new Promise(resolve => setTimeout(resolve, 1000));
+    //        }
+    //    }
+    //}
 
-    printOneEvery10Seconds4();
+    //printOneEvery10Seconds2();
+
+
+    //async function printOneEvery10Seconds3() {
+    //    while (true) {
+    //        if (queues[3].length > 0){
+    //            const ticket = queues[3].pop(); 
+    //            const ticketNumber3 = ticket.ticket_number;
+    //            cabinetik3.innerHTML = ticketNumber3;
+    //            await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
+    //        }
+    //        else{
+    //            await new Promise(resolve => setTimeout(resolve, 1000));
+    //        }
+    //    }
+    //}
+
+    //printOneEvery10Seconds3();
+
+
+    //async function printOneEvery10Seconds4() {
+    //    while (true) {
+    //        if (queues[4].length > 0){
+    //            const ticket = queues[4].pop(); // Извлекаем последний элемент
+    //            const ticketNumber4 = ticket.ticket_number;
+    //            cabinetik4.innerHTML = ticketNumber4;
+    //            await new Promise(resolve => setTimeout(resolve, 10000)); // Ждем 10 секунд
+    //        }
+    //        else{
+    //            await new Promise(resolve => setTimeout(resolve, 1000));
+    //        }
+    //    }
+    //}
+
+    //printOneEvery10Seconds4();
     
 
 
